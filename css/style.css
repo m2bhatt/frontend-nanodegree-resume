@@ -141,6 +141,12 @@ a {
   padding: 10px;
 }
 
+#skills {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
 .center-content {
   padding: 2.5% 5%;
 }
