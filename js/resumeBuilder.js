@@ -115,37 +115,35 @@ var education = {
 		}]}
 
 education.display = function() {
-	$("#education").append(HTMLschoolStart);
 	for (school in education.schools){
-	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-	var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-	var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+		$("#education").append(HTMLschoolStart);
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 
+		$(".education-entry:last").append(formattedSchoolName);
+		$(".education-entry:last").append(formattedSchoolDegree);
+		$(".education-entry:last").append(formattedSchoolLocation);
+		$(".education-entry:last").append(formattedSchoolMajor);
+		$(".education-entry:last").append(formattedSchoolDates);
 
-	$(".education-entry:last").append(formattedSchoolName);
-	$(".education-entry:last").append(formattedSchoolDegree);
-	$(".education-entry:last").append(formattedSchoolLocation);
-	$(".education-entry:last").append(formattedSchoolMajor);
-	$(".education-entry:last").append(formattedSchoolDates);
-		
-
-//Online Courses
+	}
+	//Online Courses
 
 	$("#education").append(HTMLonlineClasses);
 	for(course in education.onlineCourses){
-	var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-	var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-	var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
-	var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-	
-	$(".education-entry:last").append(formattedonlineTitle);
-	$(".education-entry:last").append(formattedonlineSchool);
-	$(".education-entry:last").append(formattedonlineDates);
-	$(".education-entry:last").append(formattedonlineURL);
-	
-		}
+		$("#education").append(HTMLschoolStart);
+		var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+		var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
+		var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+
+		$(".education-entry:last").append(formattedonlineTitle);
+		$(".education-entry:last").append(formattedonlineSchool);
+		$(".education-entry:last").append(formattedonlineDates);
+		$(".education- entry:last").append(formattedonlineURL);
 	}
 }
 
@@ -155,13 +153,13 @@ var projects = {
 		"title":"Personal Website",
 		"dates":"January 2015",
 		"description":"I created my own website to find jobs",
-		"images":["https://www.dropbox.com/s/2l0l4nji06iv7e2/Picture%201.png?dl=0", "https://www.dropbox.com/s/4t1q3n1dts99rcg/Screen%20Shot%202015-12-19%20at%207.37.13%20PM.png?dl=0"]
+		"images":["images/Portfolio1.png", "images/Portfolio2.png"]
 },
 	{
 		"title":"Animated Mug",
 		"dates":"February 2013",
 		"description":"I created an animated mug to learn more about animation via Blender.",
-		"images":["https://www.dropbox.com/s/wulzwlyolqxa431/Animated%20Mug.png?dl=0", "http://www.blender-models.com/wp-content/uploads/2013/09/kop-billede.jpg"]
+		"images":"images/Animated Mug.png"
 	}]}
 
 projects.display = function() {
