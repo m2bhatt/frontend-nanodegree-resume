@@ -44,8 +44,8 @@ var bio = {
 
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
-for(i in bio.skills) {
-	$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+	for(i in bio.skills) {
+		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
 	}
 }
 
@@ -58,8 +58,7 @@ var work = {
 		"location": "Ontario",
 		"dates": "October 2015 - Present",
 		"description": "I answer queries related to merchants' online businesses, inlcuding setting up stores, sales, billing, SEOs, online marketing, taxes, and domains."
-	},
-	{
+	},{
 		"employer": "Canadian Touring Car Championship",
 		"title": "Communications and Social Media Manager",
 		"location": "Toronto",
@@ -75,14 +74,14 @@ work.display = function(){
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		$(".work-entry:last").append(formattedEmployerTitle);
-		
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		$(".work-entry:last").append(formattedDates);
-		
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedLocation);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedDescription);
-		}
 	}
+}
 
 /* Education */
 
@@ -112,7 +111,8 @@ var education = {
 		"school": "Udacity",
 		"date": 2015,
 		"url": "https://www.udacity.com/course/javascript-basics--ud804"
-		}]}
+	}]
+}
 
 education.display = function() {
 	for (school in education.schools){
@@ -128,9 +128,9 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchoolLocation);
 		$(".education-entry:last").append(formattedSchoolMajor);
 		$(".education-entry:last").append(formattedSchoolDates);
-
 	}
-	//Online Courses
+
+//Online Courses
 
 	$("#education").append(HTMLonlineClasses);
 	for(course in education.onlineCourses){
@@ -153,14 +153,14 @@ var projects = {
 		"title":"Personal Website",
 		"dates":"January 2015",
 		"description":"I created my own website to find jobs",
-		"images":["images/Portfolio1.png", "images/Portfolio2.png"]
-},
-	{
+		"images":"images/Portfolio1.png"
+},{
 		"title":"Animated Mug",
 		"dates":"February 2013",
 		"description":"I created an animated mug to learn more about animation via Blender.",
 		"images":"images/Animated Mug.png"
-	}]}
+	}]
+}
 
 projects.display = function() {
 	for (project in projects.projects) {
@@ -177,7 +177,8 @@ projects.display = function() {
 	$(".projects-entry:last").append(formattedProjectDescription);
 	$(".projects-entry:last").append(formattedImage);
 	$(".projects-entry:last").append(formattedDescriptionImage);
-}}
+}
+}
 
 
 /* Maps */
