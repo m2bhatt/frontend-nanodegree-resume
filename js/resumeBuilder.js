@@ -169,13 +169,11 @@ projects.display = function() {
 	var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 	var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 	var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
-	var formattedDescriptionImage = formattedImage + formattedProjectDates + formattedProjectDescription + formattedProjectTitle;
 
 	$(".project-entry:last").append(formattedProjectTitle);
 	$(".project-entry:last").append(formattedProjectDates);
 	$(".project-entry:last").append(formattedProjectDescription);
 	$(".project-entry:last").append(formattedImage);
-	$(".project-entry:last").append(formattedDescriptionImage);
 }
 }
 
