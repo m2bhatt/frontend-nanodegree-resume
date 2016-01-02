@@ -122,9 +122,7 @@ education.display = function() {
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-
-		$(".education-entry:last").append(formattedSchoolName);
-		$(".education-entry:last").append(formattedSchoolDegree);
+		$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 		$(".education-entry:last").append(formattedSchoolLocation);
 		$(".education-entry:last").append(formattedSchoolMajor);
 		$(".education-entry:last").append(formattedSchoolDates);
