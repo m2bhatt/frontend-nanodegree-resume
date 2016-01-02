@@ -124,8 +124,8 @@ education.display = function() {
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 		$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 		$(".education-entry:last").append(formattedSchoolLocation);
-		$(".education-entry:last").append(formattedSchoolMajor);
 		$(".education-entry:last").append(formattedSchoolDates);
+		$(".education-entry:last").append(formattedSchoolMajor);
 	}
 
 //Online Courses
