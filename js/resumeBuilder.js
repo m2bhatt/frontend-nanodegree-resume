@@ -170,13 +170,12 @@ projects.display = function() {
 	var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 	var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 	var formattedDescriptionImage = formattedImage + formattedProjectDates + formattedProjectDescription + formattedProjectTitle;
-	$("#projects").append(formattedDescriptionImage);
 
-	$(".projects-entry:last").append(formattedProjectTitle);
-	$(".projects-entry:last").append(formattedProjectDates);
-	$(".projects-entry:last").append(formattedProjectDescription);
-	$(".projects-entry:last").append(formattedImage);
-	$(".projects-entry:last").append(formattedDescriptionImage);
+	$(".project-entry:last").append(formattedProjectTitle);
+	$(".project-entry:last").append(formattedProjectDates);
+	$(".project-entry:last").append(formattedProjectDescription);
+	$(".project-entry:last").append(formattedImage);
+	$(".project-entry:last").append(formattedDescriptionImage);
 }
 }
 
