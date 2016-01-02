@@ -1,3 +1,14 @@
+/*
+This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
+Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
+Cameron Pittman
+*/
+
+
+/*
+These are HTML strings. As part of the course, you'll be using JavaScript functions
+replace the %data% placeholder text you see in them.
+*/
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
@@ -30,7 +41,7 @@ var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = '%data%</a>';
+var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
@@ -115,16 +126,20 @@ function initializeMap() {
     locations.push(bio.contacts.location);
 
     // iterates through school locations and appends each location to
-    // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
-    }
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide: 
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    education.schools.forEach(function(school){
+      locations.push(school.location);
+    });
 
     // iterates through work locations and appends each location to
-    // the locations array
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
-    }
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide: 
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    work.jobs.forEach(function(job){
+      locations.push(job.location);
+    });
 
     return locations;
   }
@@ -191,17 +206,16 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-    for (var place in locations) {
-
+      locations.forEach(function(place){
       // the search request object
       var request = {
-        query: locations[place]
+        query: place
       };
 
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
-    }
+    });
   }
 
   // Sets the boundaries of the map based on pin locations
@@ -220,7 +234,12 @@ function initializeMap() {
 Uncomment the code below when you're ready to implement a Google Map!
 */
 
-window.addEventListener('load', initializeMap);
-window.addEventListener('resize', function(e) {
-map.fitBounds(mapBounds);
-});
+// Calls the initializeMap() function when the page loads
+//window.addEventListener('load', initializeMap);
+
+// Vanilla JS way to listen for resizing of the window
+// and adjust map bounds
+//window.addEventListener('resize', function(e) {
+  //Make sure the map bounds get updated on page resize
+//  map.fitBounds(mapBounds);
+//});
