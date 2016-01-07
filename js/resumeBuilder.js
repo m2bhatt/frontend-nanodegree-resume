@@ -65,7 +65,7 @@ var work = {
 		"dates": "March 2015 - Present",
 		"description": "I use social media to market CTCC's race events during the racing season. I interview drivers, collect and analyze vital information on the tracks and create a press release every race weekend."
 	}]
-}
+};
 
 work.display = function(){
 	for (job in work.jobs){
@@ -81,7 +81,7 @@ work.display = function(){
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedDescription);
 	}
-}
+};
 
 /* Education */
 
@@ -106,13 +106,13 @@ var education = {
 		"school": "Udacity",
 		"date": 2015,
 		"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-	}, {
+	},{
 		"title": "Javascript Basics",
 		"school": "Udacity",
 		"date": 2015,
 		"url": "https://www.udacity.com/course/javascript-basics--ud804"
 	}]
-}
+};
 
 education.display = function() {
 	for (school in education.schools){
@@ -142,7 +142,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedonlineDates);
 		$(".education-entry:last").append(formattedonlineURL);
 	}
-}
+};
 
 /* Project */
 var projects = {
@@ -151,13 +151,13 @@ var projects = {
 		"dates":"January 2015",
 		"description":"I created my own website to find jobs",
 		"images":"images/Portfolio1.png"
-},{
+	},{
 		"title":"Animated Mug",
 		"dates":"February 2013",
 		"description":"I created an animated mug to learn more about animation via Blender.",
 		"images":"images/Animated Mug.png"
-	}]
-}
+}]
+};
 
 projects.display = function() {
 	for (project in projects.projects) {
@@ -171,16 +171,12 @@ projects.display = function() {
 	$(".project-entry:last").append(formattedProjectDates);
 	$(".project-entry:last").append(formattedProjectDescription);
 	$(".project-entry:last").append(formattedImage);
-}
-}
-
+	}
+};
 
 /* Maps */
 $("#mapDiv").append(googleMap);
 
-
 work.display();
 education.display();
 projects.display();
-
-
