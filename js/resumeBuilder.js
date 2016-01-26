@@ -46,7 +46,6 @@ bio.display = function(){
 	if (bio.skills.length > 0) {
 		$('#header').append(HTMLskillsStart);
 		bio.skills.forEach(function(val){
-			console.log(val);
 			$('#skills').append(HTMLskills.replace('%data%', val));
 		});
 	}
@@ -184,6 +183,7 @@ projects.display = function() {
 /* Maps */
 $('#mapDiv').append(googleMap);
 
+bio.display();
 work.display();
 education.display();
 projects.display();
